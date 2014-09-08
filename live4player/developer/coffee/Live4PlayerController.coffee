@@ -184,4 +184,6 @@ define [], ->
       console.log 'can play'
       @video.play()  
 
+  window.Live4PlayerController = Live4PlayerController
+
   return Live4PlayerController
