@@ -22,6 +22,7 @@
     "gulp-pngmin": "~0.1.1",
     "coffee-script": "~1.8.0",
     "gulp-autoprefixer": "0.0.10",
-    "gulp-util": "~3.0.1"
+    "gulp-util": "~3.0.1",
+    "gulp-html-prettify": "0.0.1"
   }
 }

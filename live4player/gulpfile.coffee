@@ -11,6 +11,7 @@ concat      = require 'gulp-concat'
 svgmin      = require 'gulp-svgmin'
 svg2png     = require 'gulp-svg2png'
 pngmin      = require 'gulp-pngmin'
+prettify    = require 'gulp-html-prettify'
 
 dev_path =
   jade:       'developer/jade/**.jade'
@@ -60,6 +61,7 @@ gulp.task('svg2png', ['svg2png2x'], ()->
 gulp.task('html', ()->
   return gulp.src(dev_path.jade)
     .pipe(jade())
+    .pipe(prettify({indent_char: ' ', indent_size: 4}))
     # .pipe(htmlmin({collapseWhitespace: false}))
     .pipe(gulp.dest(prod_path.html))
 )
@@ -67,7 +69,8 @@ gulp.task('html', ()->
 gulp.task('templates', ()->
   return gulp.src(dev_path.templates)
     .pipe(jade())
-    .pipe(min())
+    # .pipe(min())
+    .pipe(prettify({indent_char: ' ', indent_size: 4}))
     .pipe(gulp.dest(prod_path.templates))
 )
 
