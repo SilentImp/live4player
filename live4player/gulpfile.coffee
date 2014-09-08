@@ -12,6 +12,7 @@ svgmin      = require 'gulp-svgmin'
 svg2png     = require 'gulp-svg2png'
 pngmin      = require 'gulp-pngmin'
 prettify    = require 'gulp-html-prettify'
+cssbeautify = require 'gulp-cssbeautify'
 
 dev_path =
   jade:       'developer/jade/**.jade'
@@ -66,18 +67,11 @@ gulp.task('html', ()->
     .pipe(gulp.dest(prod_path.html))
 )
 
-gulp.task('templates', ()->
-  return gulp.src(dev_path.templates)
-    .pipe(jade())
-    # .pipe(min())
-    .pipe(prettify({indent_char: ' ', indent_size: 4}))
-    .pipe(gulp.dest(prod_path.templates))
-)
-
 gulp.task('stylus', ()->
   return gulp.src(dev_path.stylus)
     .pipe(stylus())
     .pipe(concat('stylus.css'))
+    .pipe(cssbeautify())
     .pipe(gulp.dest(dev_path.css_tmp))
 )
 
