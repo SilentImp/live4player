@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+    title Player demo
+    link(rel="stylesheet", href="css/styles.css")
+    script(data-main="js/live4player", src="js/requirejs/require.js")
+  body
+
+    .live4player.live4player-static
+      .live4player-base
+      video.live4player-video(
+        width="100%",
+        height="100%",
+        preload="metadata",
+        fullscreenEnabled
+        poster="video/poster.jpg"
+        )
+        source(
+          src="video/video.ogv",
+          type='video/ogg'
+          )
+        source(
+          src="video/video.mp4",
+          type='video/mp4'
+          )
+      .live4player-watermark
+      .live4player-loading-screen
+        .live4player-loading-screen-icon
+      .live4player-load
+      .live4player-navigation
+        .live4player-navigation-progressbar
+          img.live4player-navigation-progressbar-heatmap(src="http://live4.io/heatmap/774128639/GOPRO20140905200022.MP4/43.png", alt="heat map")
+          .live4player-navigation-progressbar-seekable
+          .live4player-navigation-progressbar-progress
+        .live4player-navigation-play
+        .live4player-navigation-pause
+        .live4player-navigation-mute
+        .live4player-navigation-unmute
+        .live4player-navigation-fson
+        .live4player-navigation-fsoff
+        .live4player-navigation-time
+          .live4player-navigation-time-current
+          |  / 
+          .live4player-navigation-time-duration
