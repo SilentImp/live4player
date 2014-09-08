@@ -1,492 +1,419 @@
 .live4player {
-    width: 624px;
-    height: 351px;
-    display: block;
-    overflow: hidden;
-    position: relative;
-    font-size: 0;
-    line-height: 0;
-    user-select: none;
+  width: 624px;
+  height: 351px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  font-size: 0;
+  line-height: 0;
+  user-select: none;
 }
-
 .live4player.live4player-fsmode {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    z-index: 32000;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 32000;
 }
-
 .live4player.live4player-fsmode .live4player-navigation-fson {
-    display: none;
+  display: none;
 }
-
 .live4player.live4player-fsmode .live4player-navigation-fsoff {
-    display: block;
+  display: block;
 }
-
 .live4player.live4player-playing .live4player-navigation-play {
-    display: none;
+  display: none;
 }
-
 .live4player.live4player-playing .live4player-navigation-pause {
-    display: block;
+  display: block;
 }
-
 .live4player.live4player-muted .live4player-navigation-mute {
-    display: none;
+  display: none;
 }
-
 .live4player.live4player-muted .live4player-navigation-unmute {
-    display: block;
+  display: block;
 }
-
 .live4player.live4player-loading .live4player-loading-screen {
-    opacity: 1;
+  opacity: 1;
 }
-
 .live4player.live4player-static .live4player-load {
-    display: block;
+  display: block;
 }
-
 .live4player.live4player-static .live4player-loading,
 .live4player.live4player-static .live4player-navigation {
-    display: none;
+  display: none;
 }
-
 .live4player-base {
-    width: 100%;
-    height: 100%;
-    display: block;
-    position: absolute;
-    z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  z-index: 1;
 }
-
 .live4player-video {
-    width: 100%;
-    height: 100%;
-    display: block;
-    background-color: #000;
-    z-index: 2;
-    position: relative;
-    pointer-events: none;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: #000;
+  z-index: 2;
+  position: relative;
+  pointer-events: none;
 }
-
 .live4player-watermark {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    z-index: 3;
-    width: 56px;
-    height: 44px;
-    background-image: url("../svg/watermark.svg");
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size: 56px auto;
-    opacity: 0.6;
-    pointer-events: none;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 3;
+  width: 56px;
+  height: 44px;
+  background-image: url("../svg/watermark.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 56px auto;
+  opacity: 0.6;
+  pointer-events: none;
 }
-
 .live4player-loading-screen {
-    display: block;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #000;
-    background-color: rgba(0,0,0,0.5);
-    z-index: 4;
-    transition: opacity 0.25s;
-    pointer-events: none;
+  display: block;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #000;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 4;
+  transition: opacity 0.25s;
+  pointer-events: none;
 }
-
 .live4player-loading-screen-icon {
-    margin: auto;
-    font-size: 25px;
-    width: 1em;
-    height: 1em;
-    border-radius: 50%;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    position: absolute;
-    text-indent: -9999em;
-    animation: live4playerloading 1.1s infinite ease;
+  margin: auto;
+  font-size: 25px;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: absolute;
+  text-indent: -9999em;
+  animation: live4playerloading 1.1s infinite ease;
 }
-
 .live4player-load {
-    cursor: pointer;
-    display: none;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0,0,0,0);
-    background-image: url("../svg/play-button.svg");
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size: 100px 100px;
-    z-index: 6;
-    opacity: 1;
-    transition: opacity 0.25s;
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0);
+  background-image: url("../svg/play-button.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 100px 100px;
+  z-index: 6;
+  opacity: 1;
+  transition: opacity 0.25s;
 }
-
 .live4player-load:hover {
-    opacity: 0.8;
+  opacity: 0.8;
 }
-
 .live4player-navigation {
-    z-index: 5;
-    position: absolute;
-    height: 35px;
-    width: 100%;
-    bottom: -35px;
-    left: 0;
-    right: 0;
-    transition: bottom 0.25s;
-    background-color: #000;
-    background-color: rgba(0,0,0,0.4);
-    pointer-events: none;
-    user-select: none;
+  z-index: 5;
+  position: absolute;
+  height: 35px;
+  width: 100%;
+  bottom: -35px;
+  left: 0;
+  right: 0;
+  transition: bottom 0.25s;
+  background-color: #000;
+  background-color: rgba(0,0,0,0.4);
+  pointer-events: none;
+  user-select: none;
 }
-
 .live4player-navigation-play {
-    position: absolute;
-    left: 0;
-    width: 40px;
-    height: 35px;
-    background-image: url("../svg/play.svg");
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    cursor: pointer;
-    display: block;
-    pointer-events: all;
-    user-select: none;
+  position: absolute;
+  left: 0;
+  width: 40px;
+  height: 35px;
+  background-image: url("../svg/play.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  cursor: pointer;
+  display: block;
+  pointer-events: all;
+  user-select: none;
 }
-
 .live4player-navigation-pause {
-    position: absolute;
-    left: 0;
-    width: 40px;
-    height: 35px;
-    background-image: url("../svg/pause.svg");
-    background-repeat: no-repeat;
-    background-position: 51% 50%;
-    cursor: pointer;
-    display: none;
-    pointer-events: all;
-    user-select: none;
+  position: absolute;
+  left: 0;
+  width: 40px;
+  height: 35px;
+  background-image: url("../svg/pause.svg");
+  background-repeat: no-repeat;
+  background-position: 51% 50%;
+  cursor: pointer;
+  display: none;
+  pointer-events: all;
+  user-select: none;
 }
-
 .live4player-navigation-unmute {
-    position: absolute;
-    right: 44px;
-    width: 40px;
-    height: 35px;
-    background-image: url("../svg/mute.svg");
-    background-repeat: no-repeat;
-    background-position: 10px 8px;
-    cursor: pointer;
-    display: none;
-    pointer-events: all;
-    user-select: none;
+  position: absolute;
+  right: 44px;
+  width: 40px;
+  height: 35px;
+  background-image: url("../svg/mute.svg");
+  background-repeat: no-repeat;
+  background-position: 10px 8px;
+  cursor: pointer;
+  display: none;
+  pointer-events: all;
+  user-select: none;
 }
-
 .live4player-navigation-mute {
-    position: absolute;
-    right: 44px;
-    width: 40px;
-    height: 35px;
-    background-image: url("../svg/unmute.svg");
-    background-repeat: no-repeat;
-    background-position: 11px 8px;
-    cursor: pointer;
-    display: block;
-    pointer-events: all;
-    user-select: none;
+  position: absolute;
+  right: 44px;
+  width: 40px;
+  height: 35px;
+  background-image: url("../svg/unmute.svg");
+  background-repeat: no-repeat;
+  background-position: 11px 8px;
+  cursor: pointer;
+  display: block;
+  pointer-events: all;
+  user-select: none;
 }
-
 .live4player-navigation-fsoff {
-    position: absolute;
-    right: 4px;
-    width: 40px;
-    height: 35px;
-    background-image: url("../svg/fs-off.svg");
-    background-repeat: no-repeat;
-    background-position: 10px 8px;
-    cursor: pointer;
-    display: none;
-    pointer-events: all;
-    user-select: none;
+  position: absolute;
+  right: 4px;
+  width: 40px;
+  height: 35px;
+  background-image: url("../svg/fs-off.svg");
+  background-repeat: no-repeat;
+  background-position: 10px 8px;
+  cursor: pointer;
+  display: none;
+  pointer-events: all;
+  user-select: none;
 }
-
 .live4player-navigation-fson {
-    position: absolute;
-    right: 4px;
-    width: 40px;
-    height: 35px;
-    background-image: url("../svg/fs-on.svg");
-    background-repeat: no-repeat;
-    background-position: 12px 8px;
-    cursor: pointer;
-    display: block;
-    pointer-events: all;
-    user-select: none;
+  position: absolute;
+  right: 4px;
+  width: 40px;
+  height: 35px;
+  background-image: url("../svg/fs-on.svg");
+  background-repeat: no-repeat;
+  background-position: 12px 8px;
+  cursor: pointer;
+  display: block;
+  pointer-events: all;
+  user-select: none;
 }
-
 .live4player-navigation-time {
-    position: absolute;
-    left: 40px;
-    top: 0;
-    bottom: 0;
-    line-height: 35px;
-    font-size: 14px;
-    color: #fff;
-    font-family: 'Cytia Pro Light';
-    white-space: nowrap;
-    user-select: none;
+  position: absolute;
+  left: 40px;
+  top: 0;
+  bottom: 0;
+  line-height: 35px;
+  font-size: 14px;
+  color: #fff;
+  font-family: 'Cytia Pro Light';
+  white-space: nowrap;
+  user-select: none;
 }
-
 .live4player-navigation-time .live4player-navigation-time-current {
-    display: inline-block;
-    width: 40px;
-    text-align: right;
-    user-select: none;
+  display: inline-block;
+  width: 40px;
+  text-align: right;
+  user-select: none;
 }
-
 .live4player-navigation-time .live4player-navigation-time-duration {
-    display: inline-block;
-    width: 40px;
-    text-align: left;
-    user-select: none;
+  display: inline-block;
+  width: 40px;
+  text-align: left;
+  user-select: none;
 }
-
 .live4player-navigation-progressbar {
-    height: 7px;
-    width: 100%;
-    position: absolute;
-    overflow: hidden;
-    bottom: 100%;
-    left: 0;
-    right: 0;
-    transition: height 0.25s;
+  height: 7px;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  transition: height 0.25s;
 }
-
 .live4player-navigation-progressbar-progress {
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    pointer-events: none;
-    background-color: rgba(208,2,27,0.6);
-    border-right: 1px solid #d0021b;
-    box-shadow: inset -1px 0 0 0 rgba(0,0,0,0.3);
-    box-sizing: border-box;
-    max-width: 100%;
-    width: 0%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  pointer-events: none;
+  background-color: rgba(208,2,27,0.6);
+  border-right: 1px solid #d0021b;
+  box-shadow: inset -1px 0 0 0 rgba(0,0,0,0.3);
+  box-sizing: border-box;
+  max-width: 100%;
+  width: 0%;
 }
-
 .live4player-navigation-progressbar-seekable {
-    background-color: rgba(208,2,27,0.2);
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    cursor: pointer;
-    max-width: 100%;
-    z-index: 2;
-    pointer-events: all;
-    user-select: none;
+  background-color: rgba(208,2,27,0.2);
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  cursor: pointer;
+  max-width: 100%;
+  z-index: 2;
+  pointer-events: all;
+  user-select: none;
 }
-
 .live4player-navigation-progressbar-heatmap {
-    display: block;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
-
 .live4player:hover .live4player-navigation {
-    bottom: 0;
+  bottom: 0;
 }
-
 .live4player:hover .live4player-navigation-progressbar {
-    height: 14px;
+  height: 14px;
 }
-
 @-webkit-keyframes live4playerloading {
-    0%, 100% {
-        box-shadow: 0em -2.6em 0em 0em #fff, 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.5), -1.8em -1.8em 0 0em rgba(255,255,255,0.7);
-    }
-
-    12.5% {
-        box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.7), 1.8em -1.8em 0 0em #fff, 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.5);
-    }
-
-    25% {
-        box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.5), 1.8em -1.8em 0 0em rgba(255,255,255,0.7), 2.5em 0em 0 0em #fff, 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
-    }
-
-    37.5% {
-        box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.5), 2.5em 0em 0 0em rgba(255,255,255,0.7), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
-    }
-
-    50% {
-        box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.5), 1.75em 1.75em 0 0em rgba(255,255,255,0.7), 0em 2.5em 0 0em #fff, -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
-    }
-
-    62.5% {
-        box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.5), 0em 2.5em 0 0em rgba(255,255,255,0.7), -1.8em 1.8em 0 0em #fff, -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
-    }
-
-    75% {
-        box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.5), -1.8em 1.8em 0 0em rgba(255,255,255,0.7), -2.6em 0em 0 0em #fff, -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
-    }
-
-    87.5% {
-        box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.5), -2.6em 0em 0 0em rgba(255,255,255,0.7), -1.8em -1.8em 0 0em #fff;
-    }
+  0%, 100% {
+    box-shadow: 0em -2.6em 0em 0em #fff, 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.5), -1.8em -1.8em 0 0em rgba(255,255,255,0.7);
+  }
+  12.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.7), 1.8em -1.8em 0 0em #fff, 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.5);
+  }
+  25% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.5), 1.8em -1.8em 0 0em rgba(255,255,255,0.7), 2.5em 0em 0 0em #fff, 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
+  }
+  37.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.5), 2.5em 0em 0 0em rgba(255,255,255,0.7), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
+  }
+  50% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.5), 1.75em 1.75em 0 0em rgba(255,255,255,0.7), 0em 2.5em 0 0em #fff, -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
+  }
+  62.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.5), 0em 2.5em 0 0em rgba(255,255,255,0.7), -1.8em 1.8em 0 0em #fff, -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
+  }
+  75% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.5), -1.8em 1.8em 0 0em rgba(255,255,255,0.7), -2.6em 0em 0 0em #fff, -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
+  }
+  87.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.5), -2.6em 0em 0 0em rgba(255,255,255,0.7), -1.8em -1.8em 0 0em #fff;
+  }
 }
-
 @-moz-keyframes live4playerloading {
-    0%, 100% {
-        box-shadow: 0em -2.6em 0em 0em #fff, 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.5), -1.8em -1.8em 0 0em rgba(255,255,255,0.7);
-    }
-
-    12.5% {
-        box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.7), 1.8em -1.8em 0 0em #fff, 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.5);
-    }
-
-    25% {
-        box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.5), 1.8em -1.8em 0 0em rgba(255,255,255,0.7), 2.5em 0em 0 0em #fff, 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
-    }
-
-    37.5% {
-        box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.5), 2.5em 0em 0 0em rgba(255,255,255,0.7), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
-    }
-
-    50% {
-        box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.5), 1.75em 1.75em 0 0em rgba(255,255,255,0.7), 0em 2.5em 0 0em #fff, -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
-    }
-
-    62.5% {
-        box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.5), 0em 2.5em 0 0em rgba(255,255,255,0.7), -1.8em 1.8em 0 0em #fff, -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
-    }
-
-    75% {
-        box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.5), -1.8em 1.8em 0 0em rgba(255,255,255,0.7), -2.6em 0em 0 0em #fff, -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
-    }
-
-    87.5% {
-        box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.5), -2.6em 0em 0 0em rgba(255,255,255,0.7), -1.8em -1.8em 0 0em #fff;
-    }
+  0%, 100% {
+    box-shadow: 0em -2.6em 0em 0em #fff, 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.5), -1.8em -1.8em 0 0em rgba(255,255,255,0.7);
+  }
+  12.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.7), 1.8em -1.8em 0 0em #fff, 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.5);
+  }
+  25% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.5), 1.8em -1.8em 0 0em rgba(255,255,255,0.7), 2.5em 0em 0 0em #fff, 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
+  }
+  37.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.5), 2.5em 0em 0 0em rgba(255,255,255,0.7), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
+  }
+  50% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.5), 1.75em 1.75em 0 0em rgba(255,255,255,0.7), 0em 2.5em 0 0em #fff, -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
+  }
+  62.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.5), 0em 2.5em 0 0em rgba(255,255,255,0.7), -1.8em 1.8em 0 0em #fff, -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
+  }
+  75% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.5), -1.8em 1.8em 0 0em rgba(255,255,255,0.7), -2.6em 0em 0 0em #fff, -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
+  }
+  87.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.5), -2.6em 0em 0 0em rgba(255,255,255,0.7), -1.8em -1.8em 0 0em #fff;
+  }
 }
-
 @-webkit-keyframes live4playerloading {
-    0%, 100% {
-        box-shadow: 0em -2.6em 0em 0em #fff, 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.5), -1.8em -1.8em 0 0em rgba(255,255,255,0.7);
-    }
-
-    12.5% {
-        box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.7), 1.8em -1.8em 0 0em #fff, 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.5);
-    }
-
-    25% {
-        box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.5), 1.8em -1.8em 0 0em rgba(255,255,255,0.7), 2.5em 0em 0 0em #fff, 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
-    }
-
-    37.5% {
-        box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.5), 2.5em 0em 0 0em rgba(255,255,255,0.7), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
-    }
-
-    50% {
-        box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.5), 1.75em 1.75em 0 0em rgba(255,255,255,0.7), 0em 2.5em 0 0em #fff, -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
-    }
-
-    62.5% {
-        box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.5), 0em 2.5em 0 0em rgba(255,255,255,0.7), -1.8em 1.8em 0 0em #fff, -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
-    }
-
-    75% {
-        box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.5), -1.8em 1.8em 0 0em rgba(255,255,255,0.7), -2.6em 0em 0 0em #fff, -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
-    }
-
-    87.5% {
-        box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.5), -2.6em 0em 0 0em rgba(255,255,255,0.7), -1.8em -1.8em 0 0em #fff;
-    }
+  0%, 100% {
+    box-shadow: 0em -2.6em 0em 0em #fff, 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.5), -1.8em -1.8em 0 0em rgba(255,255,255,0.7);
+  }
+  12.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.7), 1.8em -1.8em 0 0em #fff, 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.5);
+  }
+  25% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.5), 1.8em -1.8em 0 0em rgba(255,255,255,0.7), 2.5em 0em 0 0em #fff, 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
+  }
+  37.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.5), 2.5em 0em 0 0em rgba(255,255,255,0.7), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
+  }
+  50% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.5), 1.75em 1.75em 0 0em rgba(255,255,255,0.7), 0em 2.5em 0 0em #fff, -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
+  }
+  62.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.5), 0em 2.5em 0 0em rgba(255,255,255,0.7), -1.8em 1.8em 0 0em #fff, -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
+  }
+  75% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.5), -1.8em 1.8em 0 0em rgba(255,255,255,0.7), -2.6em 0em 0 0em #fff, -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
+  }
+  87.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.5), -2.6em 0em 0 0em rgba(255,255,255,0.7), -1.8em -1.8em 0 0em #fff;
+  }
 }
-
 @-o-keyframes live4playerloading {
-    0%, 100% {
-        box-shadow: 0em -2.6em 0em 0em #fff, 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.5), -1.8em -1.8em 0 0em rgba(255,255,255,0.7);
-    }
-
-    12.5% {
-        box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.7), 1.8em -1.8em 0 0em #fff, 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.5);
-    }
-
-    25% {
-        box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.5), 1.8em -1.8em 0 0em rgba(255,255,255,0.7), 2.5em 0em 0 0em #fff, 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
-    }
-
-    37.5% {
-        box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.5), 2.5em 0em 0 0em rgba(255,255,255,0.7), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
-    }
-
-    50% {
-        box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.5), 1.75em 1.75em 0 0em rgba(255,255,255,0.7), 0em 2.5em 0 0em #fff, -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
-    }
-
-    62.5% {
-        box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.5), 0em 2.5em 0 0em rgba(255,255,255,0.7), -1.8em 1.8em 0 0em #fff, -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
-    }
-
-    75% {
-        box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.5), -1.8em 1.8em 0 0em rgba(255,255,255,0.7), -2.6em 0em 0 0em #fff, -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
-    }
-
-    87.5% {
-        box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.5), -2.6em 0em 0 0em rgba(255,255,255,0.7), -1.8em -1.8em 0 0em #fff;
-    }
+  0%, 100% {
+    box-shadow: 0em -2.6em 0em 0em #fff, 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.5), -1.8em -1.8em 0 0em rgba(255,255,255,0.7);
+  }
+  12.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.7), 1.8em -1.8em 0 0em #fff, 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.5);
+  }
+  25% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.5), 1.8em -1.8em 0 0em rgba(255,255,255,0.7), 2.5em 0em 0 0em #fff, 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
+  }
+  37.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.5), 2.5em 0em 0 0em rgba(255,255,255,0.7), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
+  }
+  50% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.5), 1.75em 1.75em 0 0em rgba(255,255,255,0.7), 0em 2.5em 0 0em #fff, -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
+  }
+  62.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.5), 0em 2.5em 0 0em rgba(255,255,255,0.7), -1.8em 1.8em 0 0em #fff, -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
+  }
+  75% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.5), -1.8em 1.8em 0 0em rgba(255,255,255,0.7), -2.6em 0em 0 0em #fff, -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
+  }
+  87.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.5), -2.6em 0em 0 0em rgba(255,255,255,0.7), -1.8em -1.8em 0 0em #fff;
+  }
 }
-
 @keyframes live4playerloading {
-    0%, 100% {
-        box-shadow: 0em -2.6em 0em 0em #fff, 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.5), -1.8em -1.8em 0 0em rgba(255,255,255,0.7);
-    }
-
-    12.5% {
-        box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.7), 1.8em -1.8em 0 0em #fff, 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.5);
-    }
-
-    25% {
-        box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.5), 1.8em -1.8em 0 0em rgba(255,255,255,0.7), 2.5em 0em 0 0em #fff, 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
-    }
-
-    37.5% {
-        box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.5), 2.5em 0em 0 0em rgba(255,255,255,0.7), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
-    }
-
-    50% {
-        box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.5), 1.75em 1.75em 0 0em rgba(255,255,255,0.7), 0em 2.5em 0 0em #fff, -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
-    }
-
-    62.5% {
-        box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.5), 0em 2.5em 0 0em rgba(255,255,255,0.7), -1.8em 1.8em 0 0em #fff, -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
-    }
-
-    75% {
-        box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.5), -1.8em 1.8em 0 0em rgba(255,255,255,0.7), -2.6em 0em 0 0em #fff, -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
-    }
-
-    87.5% {
-        box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.5), -2.6em 0em 0 0em rgba(255,255,255,0.7), -1.8em -1.8em 0 0em #fff;
-    }
+  0%, 100% {
+    box-shadow: 0em -2.6em 0em 0em #fff, 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.5), -1.8em -1.8em 0 0em rgba(255,255,255,0.7);
+  }
+  12.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.7), 1.8em -1.8em 0 0em #fff, 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.5);
+  }
+  25% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.5), 1.8em -1.8em 0 0em rgba(255,255,255,0.7), 2.5em 0em 0 0em #fff, 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
+  }
+  37.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.5), 2.5em 0em 0 0em rgba(255,255,255,0.7), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
+  }
+  50% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.5), 1.75em 1.75em 0 0em rgba(255,255,255,0.7), 0em 2.5em 0 0em #fff, -1.8em 1.8em 0 0em rgba(255,255,255,0.2), -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
+  }
+  62.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.5), 0em 2.5em 0 0em rgba(255,255,255,0.7), -1.8em 1.8em 0 0em #fff, -2.6em 0em 0 0em rgba(255,255,255,0.2), -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
+  }
+  75% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.5), -1.8em 1.8em 0 0em rgba(255,255,255,0.7), -2.6em 0em 0 0em #fff, -1.8em -1.8em 0 0em rgba(255,255,255,0.2);
+  }
+  87.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,0.2), 1.8em -1.8em 0 0em rgba(255,255,255,0.2), 2.5em 0em 0 0em rgba(255,255,255,0.2), 1.75em 1.75em 0 0em rgba(255,255,255,0.2), 0em 2.5em 0 0em rgba(255,255,255,0.2), -1.8em 1.8em 0 0em rgba(255,255,255,0.5), -2.6em 0em 0 0em rgba(255,255,255,0.7), -1.8em -1.8em 0 0em #fff;
+  }
 }
