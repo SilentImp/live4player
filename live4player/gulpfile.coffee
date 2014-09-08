@@ -60,7 +60,7 @@ gulp.task('svg2png', ['svg2png2x'], ()->
 gulp.task('html', ()->
   return gulp.src(dev_path.jade)
     .pipe(jade())
-    .pipe(htmlmin({collapseWhitespace: false}))
+    # .pipe(htmlmin({collapseWhitespace: false}))
     .pipe(gulp.dest(prod_path.html))
 )
 
